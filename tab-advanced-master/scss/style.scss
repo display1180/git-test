@@ -1,0 +1,114 @@
+@import 'reset';
+
+body {
+    width: 100%;
+    height: 100vh;
+    background-image: url(../img/bg.jpg);
+    background-repeat:no-repeat;
+    background-position:center;
+    background-size:cover;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    main {
+        width: 800px;
+        height:400px;
+        border: 1px solid #000;
+        background-color: rgba(0,0,0, 0.6);
+        backdrop-filter: blur(5px);
+        border-radius: 10px;
+        overflow:hidden;
+        display:flex;
+
+        nav {
+            width: 200px;
+            height: 100%;
+            background-color: rgba(0,0,0,0.4);
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-content:space-between;
+
+            h1 {
+                width:100%;
+                text-align:center;
+                padding-top: 40px;
+
+                img {
+                    width: 100px;
+                }
+            }
+
+            ul {
+                width: 100%;
+
+                li {
+                    height: 60px;
+
+                    a {
+                        display: flex;
+                        width: 100%;
+                        height: 100%;
+                        background: rgba(0,0,0,0.4);
+                        justify-content:center;
+                        align-items:center;
+                        font: bold 14px/1 'arial';
+                        color: #999;
+                        transition: 0.5s; // 트랜지션 안되는것 - 디스플레이논, 제트인덱스 등.
+                    }
+
+                    &.on {
+                        a {
+                            background: rgba(0,0,0,.7);
+                            color:greenyellow;
+                        }
+                    }
+                }
+            }
+        }
+
+        section {
+            width: 580px;
+            height: 100%;
+            position:relative;
+
+            article {
+                width: 100%;
+                height: 100%;
+                position:absolute;
+                top: 0;
+                left:0;
+                font-size:80px;
+                color:#fff;
+                display:flex;
+                justify-content:center;
+                align-items:center;
+                display:flex;
+                opacity:0;
+                z-index:1;
+                transition:opacity 0.2s;
+                transition-duration: 0.5s;
+                
+                transition-property: opacity;
+                transition-duration:1;
+                &.on {
+                    opacity:1;
+                    z-index: 2;
+                }
+
+                
+                &:nth-of-type(1) {
+                    height:400px;
+                }
+                &:nth-of-type(2) {
+                    height:350px;
+                }
+                &:nth-of-type(3) {
+                    height:450px;
+                }
+
+            }
+        }
+    }
+}
